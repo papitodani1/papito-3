@@ -8,11 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     const backToTopBtn = document.getElementById('backToTop');
     const faqItems = document.querySelectorAll('.faq-item');
-    const testimonialSlider = document.getElementById('testimonialSlider');
-    const testimonials = document.querySelectorAll('.testimonial');
-    const testimonialPrev = document.getElementById('testimonialPrev');
-    const testimonialNext = document.getElementById('testimonialNext');
-    const testimonialDots = document.querySelectorAll('.dot');
     const contactForm = document.getElementById('contactForm');
     
     // Hide loader after page loads
@@ -80,42 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // Testimonial slider
-    let currentTestimonial = 0;
-    
-    function showTestimonial(index) {
-        testimonials.forEach(function(testimonial, i) {
-            testimonial.classList.remove('active');
-            testimonialDots[i].classList.remove('active');
-        });
-        
-        testimonials[index].classList.add('active');
-        testimonialDots[index].classList.add('active');
-        currentTestimonial = index;
-    }
-    
-    testimonialNext.addEventListener('click', function() {
-        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        showTestimonial(currentTestimonial);
-    });
-    
-    testimonialPrev.addEventListener('click', function() {
-        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-        showTestimonial(currentTestimonial);
-    });
-    
-    testimonialDots.forEach(function(dot, index) {
-        dot.addEventListener('click', function() {
-            showTestimonial(index);
-        });
-    });
-    
-    // Auto rotate testimonials
-    setInterval(function() {
-        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-        showTestimonial(currentTestimonial);
-    }, 5000);
     
     // Form submission
     if (contactForm) {
