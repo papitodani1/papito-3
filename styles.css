@@ -1562,3 +1562,141 @@ section {
     font-size: 4.5rem;
   }
 }
+
+/* Estilos para la sección Sobre nosotros rediseñada */
+.about-image-full {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image-full img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.badge-number {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.about-content-full {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-story {
+    margin-bottom: 3rem;
+}
+
+.story-intro {
+    font-size: 1.25rem;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.about-story p {
+    margin-bottom: 1.25rem;
+    color: var(--text-medium);
+}
+
+.about-story strong {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.about-features-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.feature-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border-left: 3px solid var(--primary);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(44, 94, 46, 0.1);
+    color: var(--primary);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+    color: var(--text-medium);
+    margin-bottom: 0;
+}
+
+.about-cta {
+    text-align: center;
+}
+
+/* Media queries para la sección Sobre nosotros */
+@media (min-width: 768px) {
+    .about-image-full {
+        height: 400px;
+    }
+    
+    .about-features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .story-intro {
+        font-size: 1.375rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .about-image-full {
+        height: 500px;
+    }
+}
